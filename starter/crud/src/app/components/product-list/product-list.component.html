@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th></th>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>MRP</th>
+                    <th>Price</th>
+                    <th>Available</th>
+                </tr>
+                <tr *ngFor="let product of products; let i = index">
+                    <td>
+                        <a class="btn btn-success btn-sm text-white" routerLink="../products/{{ product.id }}">View Product</a>&nbsp;
+                        <a class="btn btn-primary btn-sm text-white" routerLink="../edit/{{ product.id }}">Edit Product</a>&nbsp;
+                        <a class="btn btn-danger btn-sm text-white" (click)="deleteProduct(product.id)">Delete Product</a>
+                    </td>
+                    <td>{{ (i+ 1) }}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.mrp}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.available}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
